@@ -42,75 +42,89 @@ class _FirstScreenState extends State<FirstScreen> {
             padding: CustomPadding.kSidePadding,
             child: Column(
               children: [
-                TextField(
-                    controller: nameController,
-                    decoration: InputDecoration(
-                      hintText: 'Name',
-                      hintStyle: TextStyleApp.textFieldStyle,
-                      fillColor: ColorsApp.white,
-                      filled: true,
-                      contentPadding:
-                          const EdgeInsets.fromLTRB(20.0, 16.0, 20.0, 16.0),
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(16),
-                      ),
-                    )),
+                SizedBox(
+                  width: double.infinity,
+                  child: TextField(
+                      controller: nameController,
+                      decoration: InputDecoration(
+                        hintText: 'Name',
+                        hintStyle: TextStyleApp.textFieldStyle,
+                        fillColor: ColorsApp.white,
+                        filled: true,
+                        contentPadding:
+                            const EdgeInsets.fromLTRB(20.0, 16.0, 20.0, 16.0),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(16),
+                        ),
+                      )),
+                ),
                 const SizedBox(height: 15),
-                TextField(
-                    controller: _textController,
-                    decoration: InputDecoration(
-                      hintText: 'Palindrome',
-                      hintStyle: TextStyleApp.textFieldStyle,
-                      fillColor: ColorsApp.white,
-                      filled: true,
-                      contentPadding:
-                          const EdgeInsets.fromLTRB(20.0, 16.0, 20.0, 16.0),
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(16),
-                      ),
-                    )),
+                SizedBox(
+                  width: double.infinity,
+                  child: TextField(
+                      controller: _textController,
+                      decoration: InputDecoration(
+                        hintText: 'Palindrome',
+                        hintStyle: TextStyleApp.textFieldStyle,
+                        fillColor: ColorsApp.white,
+                        filled: true,
+                        contentPadding:
+                            const EdgeInsets.fromLTRB(20.0, 16.0, 20.0, 16.0),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(16),
+                        ),
+                      )),
+                ),
                 const SizedBox(height: 45),
-                ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    maximumSize: const Size(310, 41),
-                    fixedSize: const Size(310, 41),
-                    backgroundColor: ColorsApp.buttonCollor,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(12),
+                SizedBox(
+                  width: double.infinity,
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                      maximumSize: const Size(310, 41),
+                      fixedSize: const Size(310, 41),
+                      backgroundColor: ColorsApp.buttonCollor,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(12),
+                      ),
                     ),
-                  ),
-                  onPressed: () {
-                    _checkPalindrome();
-                    _textController.clear();
-                  },
-                  child: Text(
-                    'Check',
-                    style: TextStyleApp.buttonTextStyle,
+                    onPressed: () {
+                      _checkPalindrome();
+                      _textController.clear();
+                    },
+                    child: Text(
+                      'Check',
+                      style: TextStyleApp.buttonTextStyle,
+                    ),
                   ),
                 ),
                 const SizedBox(height: 10),
-                ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    maximumSize: const Size(310, 41),
-                    fixedSize: const Size(310, 41),
-                    backgroundColor: ColorsApp.buttonCollor,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(12),
+                SizedBox(
+                  width: double.infinity,
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                      maximumSize: const Size(310, 41),
+                      fixedSize: const Size(310, 41),
+                      backgroundColor: ColorsApp.buttonCollor,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(12),
+                      ),
                     ),
-                  ),
-                  onPressed: () {
-                    String name = nameController.text;
-                    Navigator.pushReplacement(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => SecondScreen(
-                                  name: name,
-                                  apiName: '',
-                                )));
-                  },
-                  child: Text(
-                    'Next',
-                    style: TextStyleApp.buttonTextStyle,
+                    onPressed: () {
+                      String name = nameController.text;
+                      Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => SecondScreen(
+                                    name: name,
+                                    apiName: '',
+                                  )));
+                    },
+                    child: Text(
+                      'Next',
+                      style: TextStyleApp.buttonTextStyle,
+                    ),
                   ),
                 )
               ],
